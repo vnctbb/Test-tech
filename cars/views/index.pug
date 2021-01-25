@@ -1,0 +1,29 @@
+include includes/head.pug
+body
+  div.separation
+    header
+      h1 - Caars -
+      hr
+      h2 Le catalogue des plus belles voitures
+      div.button
+        button Liste
+      div.propBrands
+        each brand in brands
+          a(href=`/brands/${brand}`) #{brand}
+      form(action="/search" method='GET')
+        input(type="text" name='search' placeholder='Votre recherche' maxlength='30')
+        input(type="submit" value='Chercher')
+    section
+      div.container
+        div
+          each car in cars
+            div.box
+              a(href=`/cars/${car.name}`)
+                img(src=`${car.img}` alt=`${car.name}`)
+    section.hiddenMenu
+      button Retour
+      ul
+        each car in cars
+          li
+            a(href=`/cars/${car.name}`) #{car.name}
+  include includes/footer.pug

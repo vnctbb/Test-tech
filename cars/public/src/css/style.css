@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+body{
+  background-color: #0A294C;
+  color: #C54B46;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------- */
+/* header */
+
+header{
+  text-align: center;
+}
+
+header > h1{
+  font-size: 4em;
+  margin-top: 15%;
+}
+
+/* proposition des marques */
+.propBrands{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 50px;
+  margin-bottom: 100px;
+  text-align: center;
+  width: 100%;
+}
+
+.propBrands > a{
+  color: #ffffdf;
+  display: inline;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.propBrands > a:hover{
+  color: yellow;
+  scale: 1.2;
+}
+
+.propBrands > a:focus{
+  outline-style: none;
+}
+
+/* -------------- */
+/* champ de recherche */
+
+form{
+  width:400px;
+  margin: 25px auto;
+}
+
+form > input{
+  border-radius: 10px;
+  height: 40px;
+  margin: 5px;
+}
+
+form > input:first-child{
+  font-size: 1.2em;
+  margin-right: 15px;
+  padding-left: 5px;
+  width: 200px;
+}
+
+form > input:first-child:focus{
+  outline-style: none;
+}
+
+form > input:last-child{
+  background-color: #C54B46;
+  border: 2px solid #C54B46;
+  color: #ffffdf;
+  font-size: 1.2em;
+}
+
+/* -------------- */
+/* présentation des photos */
+
+.container > div{
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin: 100px auto;
+}
+
+.box{
+  height: 100px;
+  margin-bottom: 20px;
+  width: 48%;
+}
+
+box > a > img{
+  width: 100%;
+}
+
+/* -------------- */
+/* bouton affiche/masque le menu caché */
+
+.button{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 3;
+}
+
+.button a{
+  color: #C54B46;
+  font-weight: bold;
+  font-size: 2em;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.button a:focus{
+  outline-style: none;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  color: #C54B46;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+/* -------------- */
+/* menu caché */
+
+.hiddenMenu{
+  background-color: #C54B46;
+  height: 100%;
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 400px;
+  z-index: 4;
+}
+
+.hiddenMenu > button{
+  color: #0A294C;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.hiddenMenu > ul > li > a{
+  color: #0A294C;
+  font-size: 1.2em;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+/* -------------- */
+/* proposition de voitures */
+
+.result{
+  margin: 75px;
+}
+
+.propCars{
+  align-items: center;
+  background-color: #ffffdf10;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  height: 250px;
+  justify-content: center;
+  margin-bottom: 15px;
+  transition-property: background-color, transform;
+  transition-duration: 0.5s;
+}
+
+.propCars > a > img{
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 60%;
+}
+
+.propCars > a{
+  color: #C54B46;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* -------------- */
+/* style page présentation des voitures */
+
+.w600{
+  width: 70%;
+  text-align: justify;
+  margin: 50px auto;
+}
+
+.yellow{
+  color: yellow;
+}
+
+.carPics{
+  margin: 20px;
+  width: 300px;
+}
+
+.description{
+  margin: 50px;
+  text-align: center;
+}
+
+span{
+  font-weight: bold;
+}
+
+/* -------------- */
+/* footer */
+
+footer{
+  text-align: right;
+  margin-right: 15px;
+}
+
+/* -------------- */
+/* bouton retour 404 */
+
+.error{
+  margin: 150px;
+}
+
+.backError{
+  background-color: #C54B46;
+  border-radius: 15px;
+  color: #ffffdf;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.backError:hover{
+  background-color: #0A294C;
+  border: 2px solid #C54B46;
+  border-radius: 15px;
+}
+
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+/* format tablette */
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+
+@media (min-width: 480px) and (max-width: 800px){
+  /* 4 marques cote à cote au lieu de 2 */
+  .propBrands{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  /* largeur et hauteur du cadre contenant les photos */
+  .box{
+    height: unset;
+    width: 30%;
+  }
+}
+
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+/* format bureau */
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+
+@media (min-width: 810px) {
+  /* disposition partie gauche / partie droite */
+  .separation{
+    display: flex;
+    margin: 20px 20px 40px 20px;
+  }
+  
+  /* margin-top réduit */
+  header > h1{
+    margin-top: 10%;
+  }
+
+  /* modification des titres */
+  h1, h2{
+    font-weight: 900;
+    text-align: center;
+  }
+
+  /* margin-top réduit pour le bloc des marques */
+  .propBrands{
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: unset;
+    margin-top: 100px;
+  }
+
+  /* champ de recherche */
+  form{
+    width: 600px;
+    margin: 75px auto;
+  }
+
+  form > input{
+    border-radius: 10px;
+    height: 40px;
+    margin: 5px;
+  }
+  
+  form > input:first-child{
+    border: none;
+    font-size: 1.2em;
+    margin-right: 15px;
+    padding-left: 5px;
+    width: 300px;
+  }
+  
+  form > input:last-child:hover{
+    border: 2px solid #b34643;
+    background-color: #b34643;
+  }
+  
+  /* modification des éléments pour le scroll*/
+  .container{
+    height: 600px;
+    margin: 0 auto;
+    overflow-y: hidden;
+    padding: 10px;
+    width: 450px;
+  }
+  /* modification des éléments pour le scroll*/
+  .container > div{
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  /* modification des éléments pour le scroll*/
+  .box{
+    filter: grayscale(100%);
+    flex-shrink: 0;
+    height: 200px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: 0.3s;
+    width: 400px;
+  }
+  /* modification des éléments pour le scroll*/
+  .box:hover{
+    border-radius: 5px;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    z-index: 2;
+  }
+  /* modification des éléments pour le scroll*/
+  box > a > img{
+    width: 100%;
+  }
+
+  /* changement de couleur du texte lors du survol */
+  button:hover{
+    color: yellow;
+  }
+
+  .hiddenMenu > button:hover{
+    color: yellow;
+  }
+
+  .hiddenMenu > ul > li > a:hover{
+    color: yellow;
+  }
+
+  .button a:hover{
+    color: yellow;
+  }
+
+  /* resultats recherche / proposition de marque */
+
+  .result{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  .propCars:hover{
+    background-color: #ffffdf20;
+    transform: scale(1.1);
+  }
+
+  /* modification des éléments de la description de la page car*/
+  .w600{
+    width: 55%;
+  }
+  
+  .description > div{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+  }
+
+  .description > div > p{
+    margin-right: 20px;
+  }
+
+  .carPics{
+    width: 400px;
+  }
+}

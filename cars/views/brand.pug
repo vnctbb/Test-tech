@@ -1,0 +1,29 @@
+doctype html
+head
+  meta(charset=utf-8)
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='/styles/style.css')
+  link(rel="shortcut icon" type="image/png" href="/img/icon.png")
+  script(src="/scripts/button.js")
+  title - Caars - #{brands[0].marque} - Le catalogue des plus belles voitures
+body
+  header
+    h1 - Caars -
+    hr
+    h2= name
+    div.button
+      a(href='/') Menu
+      button Liste
+    div.result
+      each car in brands
+        div.propCars
+          a(href=`/cars/${car.name}`)
+            img(src=`${car.img}` alt=`${car.name}`)
+            p #{car.name}
+  section.hiddenMenu
+    button Retour
+    ul
+      each car in cars
+        li
+          a(href=`/cars/${car.name}`) #{car.name}
+  include includes/footer.pug
